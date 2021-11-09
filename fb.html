@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" referrerpolicy="no-referrer" />
+    <link rel="icon" href="data:image/png;base64,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">
+</head>
+<body>
+    <nav>
+        <div class="left">
+            <div class="left-box">
+                <img src="logo.png" class="logo" alt="">
+                <div class="search-box">
+                    <i class="fas fa-search icon"></i>
+                    <input type="text" class="search-input" placeholder="search Facebook" autofocus >
+                </div>
+            </div>
+        </div>
+        <div class="center">
+            <div class="center-box">
+                <div class="center-link active">
+                    <i class="fas fa-home center-icon"></i>
+                    
+                </div>
+                <div class="center-link">
+                    <i class="far fa-flag center-icon"></i>
+                </div>
+                <div class="center-link">
+                    <i class="fas fa-play center-icon"></i>
+                    <span class="noti">12</span>
+                </div>
+                <div class="center-link">
+                    <i class="fas fa-users center-icon"></i>
+                    <span class="noti">9+</span>
+                </div>
+                <div class="center-link">
+                    <i class="fas fa-border-all center-icon"></i>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="right-box">
+                <div class="profile">
+                    <img src="poe.jpg" class="profile-photo" alt="">
+                    <span class="profile-text">Kaung</span>
+                </div>
+                <div class="notification_box">
+                    <div class="notification">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="notification">
+                        <i class="fab fa-facebook-messenger"></i>
+                        <span class="nti1">9+</span>
+                    </div>
+                    <div class="notification">
+                        <i class="fas fa-bell"></i>
+                        <span class="nti">5</span>
+                    </div>
+                    <div class="notification">
+                        <i class="fas fa-sort-down"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+   <section class="fb-body">
+       <section class="left-aside scroll">
+           <div class="first-part">
+        
+               <div class="first-part-item" style="padding-right: 22px;">
+             <!-- <img src="s2.jpg" alt="" class="first-part-image" style="margin-right:10px"> -->
+             <div class="first-part-image"></div>
+              <span class="first-part-text">Kaung si thu</span>
+               </div>
+               <div class="first-part-item">
+                <i class="fas fa-heart fa-2x"style="color: #9c1de7;padding-right:17px"></i>
+                   <span class="first-part-text">Covid 19 information center </span>
+               </div>
+               <div class="first-part-item" >
+                <i class="fas fa-user-friends fa-2x" style="padding-right: 9px;color: cadetblue;" ></i>
+                   <span class="first-part-text">friend</span>
+               </div>
+               <div class="first-part-item">
+                <i class="fas fa-bookmark fa-2x" style="padding-right: 22px; color: crimson;"></i>
+                   <span class="first-part-text">saved</span>
+               </div>
+               <div class="first-part-item">
+                <i class="fas fa-history fa-2x" style="padding-right: 14px;color: #f3cf7a;"></i>
+                   <span class="first-part-text">memory</span>
+               </div>
+               <div class="first-part-item">
+                <i class="fas fa-flag fa-2x" style="padding-right: 14px; color: #28c7fa;"></i>
+                   <span class="first-part-text">pages</span>
+               </div>
+               <div class="first-part-item ">
+                <i class="fas fa-chevron-down see-more" style="margin-right: 8px;"></i>
+                   <span class="first-part-text">see more</span>
+               </div>
+              <div class="divider">
+              </div>
+           </div>
+
+           <div class="first-part">
+            <div class="">
+                <h1>Shortcut</h1>
+             </div>
+            <div class="first-part-item" style="padding-right: 22px;">
+               
+            </div>
+            <div class="first-part-item">
+            <img src="bwd.png" alt="" class="second-part-image">
+                <span class="first-part-text"> MMSIT SWD </span>
+            </div>
+            <div class="first-part-item" >
+                <img src="js.png" alt="" class="second-part-image">
+                <span class="first-part-text">Javascript tips and tricks</span>
+            </div>
+            <div class="first-part-item">
+                <img src="og1.png" alt="" class="second-part-image">
+                <span class="first-part-text">OMG</span>
+            </div>
+            <div class="first-part-item">
+                <img src="bs.png" alt="" class="second-part-image">
+                <span class="first-part-text">mmsit bootstrap</span>
+            </div>
+            <div class="first-part-item">
+                <img src="lara.png" alt="" class="second-part-image">
+                <span class="first-part-text">Laravel </span>
+            </div>
+            <div class="first-part-item ">
+             <i class="fas fa-chevron-down see-more" style="margin-right: 8px;"></i>
+                <span class="first-part-text">see more</span>
+            </div>
+           <!-- <div class="divider"></div> -->
+        </div>
+       </section>
+       <section class="news-feed scroll">
+    
+            <div class="myday-list">
+                <div class="myday" style="background-image: url(poe.jpg);">
+                    <div class="myday-owner">
+                        <i class="fas fa-plus icon"></i>
+                    </div>
+                    <p class="myday-txt">Add your story</p>
+                    <!-- <img src="angel.jpg" alt="" class="myday-image"> -->
+                </div>
+                <div class="myday" style="background-image: url(poe2.jpg);">
+                    <div class="myday-owner">
+                    <div class="myday-owner-img" style="background-image: url(poe.jpg);"></div>
+                    </div>
+                    <p class="myday-txt">Add your story</p>
+                    <!-- <img src="angel.jpg" alt="" class="myday-image"> -->
+                </div>  
+                 <div class="myday" style="background-image: url(poe3.jpg);">
+                    <div class="myday-owner">
+                        <div class="myday-owner-img" style="background-image: url(poe1.jpg);"></div>
+                    </div>
+                    <p class="myday-txt">Add your story</p>
+                    <!-- <img src="angel.jpg" alt="" class="myday-image"> -->
+                </div>  
+                 <div class="myday" style="background-image: url(poe4.jpg)">
+                    <div class="myday-owner">
+                        <div class="myday-owner-img" style="background-image: url(poe2.jpg);"></div>
+                    </div>
+                    <p class="myday-txt">Add your story</p>
+                    <!-- <img src="angel.jpg" alt="" class="myday-image"> -->
+                </div>   
+                <div class="myday" style="background-image: url(poe5.jpg);">
+                    <div class="myday-owner">
+                        <div class="myday-owner-img" style="background-image: url(poe6.jpg);"></div>
+                    </div>
+                    <p class="myday-txt">Add your story</p>
+                    <!-- <img src="angel.jpg" alt="" class="myday-image"> -->
+                </div>
+                    <div class="scroll-myday">
+            <i class="fas fa-arrow-right"></i>
+         </div>
+                <!-- <div class="myday" style="background-image: url(poe6.jpg);">
+                    <div class="myday-owner">
+                        <div class="myday-owner-img" style="background-image: url(poe6.jpg);"></div>
+                    </div>
+                    <p class="myday-txt">Add your story</p>
+                   
+                </div>
+          -->
+            </div>
+        
+            <div class="addpost" >
+                <div class="add-post-box">
+                    <div class="add-text">
+                        <img src="poe.jpg" class="add-text-profile" alt="">
+                        <div class="add-text-box">
+                            <input type="text" class="search-input" placeholder="what is on your mind?Kaung" >
+                        </div>
+                    </div> 
+                   <div class="divider">
+                   </div>
+                    <div class="add-file">
+                        <div class="video">
+                            <i class="fas fa-video"></i>
+                            <span>Live video</span>
+                        </div>
+                        <div class="photo">
+                            <i class="fas fa-images"></i>
+                            <span>Photo/video</span>
+                        </div>
+                        <div class="emoji">
+                            <i class="fas fa-eye"></i>
+                            <span>Feeling/Activity</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="create-room-box">
+                <div class="create-room">
+                    <i class="fas fa-video" style="color: #b14cb9;"></i>
+                    <span style="color: #4599ff;">Create Room</span>
+                </div>
+                <div class="create-room-image">
+                    <img src="mount.jpg" alt="" class="create-room-image1">
+                    <span class="ative-1"></span>
+                </div>
+                <div class="create-room-image">
+                    <img src="js.png" alt="" class="create-room-image1">
+                    <span class="ative-1"></span>
+                </div>
+                <div class="create-room-image">
+                    <img src="poe.jpg" alt="" class="create-room-image1">
+                    <span class="ative-1"></span>
+                </div>
+                <div class="create-room-image">
+                    <img src="poe3.jpg" alt="" class="create-room-image1">
+                    <span class="ative-1"></span>
+                </div>
+                <div class="create-room-image">
+                    <img src="sun.jpg" alt="" class="create-room-image1">
+                    <span class="ative-1"></span>
+                </div>
+                <div class="create-room-image">
+                    <img src="sayar.jpg" alt="" class="create-room-image1">
+                    <span class="ative-1"></span>
+                </div>
+                <div class="create-room-image">
+                    <img src="poe7.jpg" alt="" class="create-room-image1">
+                    <span class="ative-1"></span>
+                </div>
+                <div class="create-room-image">
+                    <img src="naytoe.jpg" alt="" class="create-room-image1">
+                    <span class="ative-1"></span>
+                </div>
+                <div class="create-room-image">
+                    <img src="nyiwana.jpg" alt="" class="create-room-image1">
+                    <span class="ative-1"></span>
+                </div>
+            
+                <div class="arrow">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+            <div class="post-list">
+               <div class="post" >
+                   <div class="heading">
+                      <img src="poe.jpg" alt="" class="post-img">
+                      <span class="blue-mark"></span>
+                        <span style="margin: 2px 10px;">Kaung Si Thu <br> <a href="" style="text-decoration: none;">1hr .</a> <i class="fas fa-globe-americas"></i> </span>
+                        <i class="fas fa-ellipsis-h hver" style="transform: translate(380px, 10px);"></i>
+                   </div>
+                   <div class="caption">
+                       <p>Foundation class is over &hearts;</p>
+                   </div>
+                  <div class="cap-img">
+                    <img src="kst.jpg" alt="" class="caption-img">
+                  </div>
+                  <div class="reaction">
+                    <span><i class="fas fa-heart heart" ></i><i class="fas fa-thumbs-up like-reaction"></i> Elon and 1k others</span>
+                   <div class="commentandshare">
+                    <span >2k comments .</span>
+                    <span>1k share</span>
+                   </div>
+                   
+                  </div>
+                  <div class="divider"></div>
+                <div class="reaction-give">
+                    <div class="like">
+                        <i class="fas fa-thumbs-up" style="color: var(--primary);"></i>
+                        <span>like</span>
+                    </div>
+                    <div class="comment">
+                        <i class="fas fa-comment-alt"></i>
+                        <span>Comment</span>
+                    </div>
+                    <div class="share">
+                        <i class="fas fa-share"></i>
+                        <span>share</span>
+                    </div>
+                </div>
+               </div>
+               <div class="post">
+                <div class="heading">
+                   <img src="back2.jpg" alt="" class="post-img">
+                  
+                     <span style="margin: 0 3px;">Mark Zuckarberg <i class="fas fa-check-circle mark"></i> <br> <a href="" style="text-decoration: none;">just now .</a> <i class="fas fa-globe-americas"></i> </span>
+                     <i class="fas fa-ellipsis-h hver" style="transform: translate(380px, 10px);"></i>
+                </div>
+                <div class="caption">
+                    <p>Good morning &sung; &sung;&sung;</p>
+                </div>
+               <div class="cap-img">
+                 <img src="back2.jpg" alt="" class="caption-img">
+               </div>
+               <div class="reaction">
+                 <span><i class="fas fa-heart heart" ></i><i class="fas fa-thumbs-up like-reaction"></i> Billgate and 10k others</span>
+                <div class="commentandshare">
+                 <span >12k comments .</span>
+                 <span>100k share</span>
+                </div>
+                
+               </div>
+               <div class="divider"></div>
+             <div class="reaction-give">
+                 <div class="like">
+                    <i class="fas fa-heart heart" ></i>
+                    <span>Love</span>
+                 </div>
+                 <div class="comment">
+                     <i class="fas fa-comment-alt"></i>
+                     <span>Comment</span>
+                 </div>
+                 <div class="share">
+                     <i class="fas fa-share"></i>
+                     <span>share</span>
+                 </div>
+             </div>
+            </div>
+            <div class="post">
+                <div class="heading">
+                   <img src="gate.png" alt="" class="post-img">
+                  
+                     <span style="margin: 0 3px;">Bill Gates <i class="fas fa-check-circle mark"></i> <br> <a href="" style="text-decoration: none;">just now .</a> <i class="fas fa-globe-americas"></i> </span>
+                     <i class="fas fa-ellipsis-h hver" style="transform: translate(380px, 10px);"></i>
+                </div>
+                <div class="caption">
+                    <p>It is impossible to forward the life with u! U were the good housewife &hearts;</p>
+                </div>
+               <div class="cap-img">
+                 <img src="gate.jpg" alt="" class="caption-img">
+               </div>
+               <div class="reaction">
+                 <span><i class="fas fa-thumbs-up like-reaction"></i> Billgate and 29k others</span>
+                <div class="commentandshare">
+                 <span >1M comments .</span>
+                 <span>2.1M share</span>
+                </div>
+                
+               </div>
+               <div class="divider"></div>
+             <div class="reaction-give">
+                <div class="like">
+                    <i class="fas fa-thumbs-up" style="color: var(--primary);"></i>
+                    <span>like</span>
+                </div>
+                 <div class="comment">
+                     <i class="fas fa-comment-alt"></i>
+                     <span>Comment</span>
+                 </div>
+                 <div class="share">
+                     <i class="fas fa-share"></i>
+                     <span>share</span>
+                 </div>
+             </div>
+            </div>
+            <div class="post">
+                <div class="heading">
+                   <img src="khin1.jpg" alt="" class="post-img">
+                  
+                     <span style="margin: 0 3px;">Khin Wint Wah <i class="fas fa-check-circle mark"></i> <br> <a href="" style="text-decoration: none;">just now .</a> <i class="fas fa-globe-americas"></i> </span>
+                     <i class="fas fa-ellipsis-h hver" style="transform: translate(380px, 10px);"></i>
+                </div>
+                <div class="caption">
+                    <p>Stay safe!</p>
+                </div>
+               <div class="cap-img">
+                 <img src="khin.jpg" alt="" class="caption-img">
+               </div>
+               <div class="reaction">
+                 <span>   <i class="fas fa-heart heart" ></i><i class="fas fa-thumbs-up like-reaction"></i> Kaung and 29k others</span>
+                <div class="commentandshare">
+                 <span >20k comments .</span>
+                 <span>19k share</span>
+                </div>
+                
+               </div>
+               <div class="divider"></div>
+             <div class="reaction-give">
+                <div class="like">
+                    <i class="fas fa-heart heart" ></i>
+                    <span>Love</span>
+                </div>
+                 <div class="comment">
+                     <i class="fas fa-comment-alt"></i>
+                     <span>Comment</span>
+                 </div>
+                 <div class="share">
+                     <i class="fas fa-share"></i>
+                     <span>share</span>
+                 </div>
+             </div>
+            </div>
+            <div class="post">
+                <div class="heading">
+                   <img src="sayar.jpg" alt="" class="post-img">
+                  
+                     <span style="margin: 0 3px;">Hein Htet Zan<br> <a href="" style="text-decoration: none;">1 min ago.</a> <i class="fas fa-globe-americas"></i> </span>
+                     <i class="fas fa-ellipsis-h hver" style="transform: translate(380px, 10px);"></i>
+                </div>
+                <div class="caption">
+                    <p>အကိုတို႔ေမ့ေနၾကၿပီမလား 😊</p>
+                </div>
+               <div class="cap-img">
+                 <img src="sayar2.jpg" alt="" class="caption-img">
+               </div>
+               <div class="reaction">
+                 <span>   <i class="fas fa-heart heart" ></i><i class="fas fa-thumbs-up like-reaction"></i> Kaung,Poe and 30k others</span>
+                <div class="commentandshare">
+                 <span >2k comments .</span>
+                 <span>1.4k share</span>
+                </div>
+                
+               </div>
+               <div class="divider"></div>
+             <div class="reaction-give">
+                <div class="like">
+                    <i class="fas fa-heart heart" ></i>
+                    <span>Love</span>
+                </div>
+                 <div class="comment">
+                     <i class="fas fa-comment-alt"></i>
+                     <span>Comment</span>
+                 </div>
+                 <div class="share">
+                     <i class="fas fa-share"></i>
+                     <span>share</span>
+                 </div>
+             </div>
+            </div>
+            <div class="post">
+                <div class="heading">
+                   <img src="poe.jpg" alt="" class="post-img">
+                  
+                     <span style="margin: 0 3px;">Hein Htet Zan<br> <a href="" style="text-decoration: none;">1 min ago.</a> <i class="fas fa-globe-americas"></i> </span>
+                     <i class="fas fa-ellipsis-h hver" style="transform: translate(380px, 10px);"></i>
+                </div>
+                <div class="caption">
+                    <p>Mingalarbar</p>
+                </div>
+               <div class="cap-img">
+                 <img src="kg1.jpg" alt="" class="caption-img">
+               </div>
+               <div class="reaction">
+                 <span>   <i class="fas fa-heart heart" ></i><i class="fas fa-thumbs-up like-reaction"></i> Khinwint and 3k others</span>
+                <div class="commentandshare">
+                 <span >2k comments .</span>
+                 <span>1.4k share</span>
+                </div>
+                
+               </div>
+               <div class="divider"></div>
+             <div class="reaction-give">
+                <div class="like">
+                    <i class="fas fa-heart heart" ></i>
+                    <span>Love</span>
+                </div>
+                 <div class="comment">
+                     <i class="fas fa-comment-alt"></i>
+                     <span>Comment</span>
+                 </div>
+                 <div class="share">
+                     <i class="fas fa-share"></i>
+                     <span>share</span>
+                 </div>
+             </div>
+            </div>
+            <div class="post">
+                <div class="heading">
+                   <img src="mmsit.png" alt="" class="post-img">
+                  
+                     <span style="margin: 0 3px;">MMS One Stop It Solutions<br> <a href="" style="text-decoration: none;">1 min ago.</a> <i class="fas fa-globe-americas"></i> </span>
+                     <i class="fas fa-ellipsis-h hver" style="transform: translate(359px, 10px);;"></i>
+                </div>
+                <div class="caption">
+                    <p>Developer တွေမှာလည်း စိတ်ညစ် 
+                        စရာတွေရှိတတ်တယ် 😜</p>
+                </div>
+               <div class="cap-img">
+                 <img src="mmsit1.jpg" alt="" class="caption-img">
+               </div>
+               <div class="reaction">
+                 <span>    <i class="fas fa-grin-squint " style="color: yellow;font-size: 20px"></i><i class="fas fa-thumbs-up like-reaction"></i> Khinwint and 3k others</span>
+                <div class="commentandshare">
+                 <span >2k comments .</span>
+                 <span>1.4k share</span>
+                </div>
+                
+               </div>
+               <div class="divider"></div>
+             <div class="reaction-give">
+                <div class="like">
+                    <i class="fas fa-grin-squint " style="color: yellow;font-size: 16px;"></i>
+                    <span>Haha</span>
+                </div>
+                 <div class="comment">
+                     <i class="fas fa-comment-alt"></i>
+                     <span>Comment</span>
+                 </div>
+                 <div class="share">
+                     <i class="fas fa-share"></i>
+                     <span>share</span>
+                 </div>
+             </div>
+            </div>
+            </div>
+            <br><br><br><br><br><br><br>
+       </section>
+       <section class="chat-box scroll" >
+         
+           <div class="sponsor">
+               <h1 style="margin-left: 50px;margin-top:20px;font-size: 20px;">Sponsored</h1>
+               <div class="first-sponsor">
+                   <img src="ads.png" alt="" class="first-sponsor-image">
+                   <span class="first-sponsor-txt"><b>ONe stop market</b> <br><a href="https://www.facebook.com/1StopMartmyanmar" style="text-decoration: none; color: #9ea1a6
+                    ;">onestopmart.com</a>  </span><br>                  
+               </div>
+               <div class="first-sponsor">
+                <img src="ads1.jpg" alt="" class="first-sponsor-image">
+                <span class="first-sponsor-txt"> <b>Shop with us</b>  <br><a href="https://www.facebook.com/CityMartSupermarketMyanmar" style="text-decoration: none; color: #9ea1a6
+                 ;">citymart.com</a>  </span><br>                  
+            </div>
+            <div class="divider" style="margin-top: 10px;"></div>
+           </div>
+           <div class="contact">
+               <div class="contact-nav">
+                   <span>Contact</span>
+                   <div class="contact-icon">
+                    <i class="fas fa-video"></i>
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-ellipsis-h"></i>
+                   </div>
+               </div>
+               <div class="active-ppl">
+                   <div class="ppl">
+                       <img src="sayar.jpg" alt="" class="ppl-img">
+                       <span>Hein Htet zan</span>
+                       <span class="ative"></span>
+                   </div>
+                   <div class="ppl">
+                    <img src="poe7.jpg" alt="" class="ppl-img">
+                    <span>Poe Mamhee Thar</span>
+                    <span class="ative"></span>
+                </div>
+                <div class="ppl">
+                    <img src="nyiwana.jpg" alt="" class="ppl-img">
+                    <span>Nyi Wanna Tun</span>
+                    <span class="ative"></span>
+                </div>
+                <div class="ppl">
+                    <img src="sun.jpg" alt="" class="ppl-img">
+                    <span>Sun Por</span>
+                    <span class="ative"></span>
+                </div>
+                <div class="ppl">
+                    <img src="swam.jpg" alt="" class="ppl-img">
+                    <span>Swamn Nyi Nyi Zaw</span>
+                    <span class="ative"></span>
+                </div>
+                <div class="ppl">
+                    <img src="lhn.jpg" alt="" class="ppl-img">
+                    <span>Lin Htet Naing</span>
+                    <span class="ative"></span>
+                </div>
+                <div class="ppl">
+                    <img src="wy.jpg" alt="" class="ppl-img">
+                    <span>Zwe Wai Yan Htet</span>
+                    <span class="ative"></span>
+                </div>
+                <div class="ppl">
+                    <img src="wya.jpg" alt="" class="ppl-img">
+                    <span>Wai Yan Aung</span>
+                    <span class="ative"></span>
+                </div>
+                <div class="ppl">
+                    <img src="th.jpg" alt="" class="ppl-img">
+                    <span>Than Htut Win</span>
+                    <span class="ative"></span>
+                </div>
+                <div class="ppl">
+                    <img src="tmt.jpg" alt="" class="ppl-img">
+                    <span>တင်မောင်သန်း</span>
+                    <span class="ative"></span>
+                </div>
+                <div class="ppl">
+                    <img src="mount.jpg" alt="" class="ppl-img">
+                    <span>Mason MOunt</span>
+                    <span class="ative"></span>
+                </div>
+                <div class="ppl">
+                    <img src="naytoe.jpg" alt="" class="ppl-img">
+                    <span>Hein Min Htet</span>
+                    <span class="ative"></span>
+                </div>
+                <div class="ppl">
+                    <img src="ed.jpg" alt="" class="ppl-img">
+                    <span>Ko Tote kyi</span>
+                    <span class="ative"></span>
+                </div>
+                <div class="ppl">
+                    <img src="marron5.jpg" alt="" class="ppl-img">
+                    <span>Kyaw gyi</span>
+                    <span class="ative"></span>
+                </div>
+                <div class="ppl">
+                    <img src="elon.jpg" alt="" class="ppl-img">
+                    <span>Elon musk</span>
+                    <span class="ative"></span>
+                </div>
+                <div class="ppl">
+                    <img src="billgate.jpg" alt="" class="ppl-img">
+                    <span>Rich Kid</span>
+                    <span class="ative"></span>
+                </div>
+                <div class="divider" style="margin-top: 20px;"></div>
+               </div>
+               <div class="gp">
+                    <span>Group Conversation</span>
+                    <div class="">
+                        <div class="chat-gp">
+                            <img src="mm.png" alt="" class="chat-img">
+                            <span>Myanmar's people</span>
+                            <span class="ative"></span>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="chat-gp">
+                            <img src="lara.png" alt="" class="chat-img">
+                            <span>Laravel 7A</span>
+                            <span class="ative"></span>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="chat-gp">
+                            <img src="dog.jpg" alt="" class="chat-img">
+                            <span>dog's lovers</span>
+                            <span class="ative"></span>
+                        </div>
+                    </div>
+                    <div class="gp-chat">
+                        <i class="fas fa-plus gp-icon"></i>
+                        <span class="gp-txt">Create new Group</span>
+                        </div>
+                    </div>
+                    <br><br><br>
+               </div>
+           </div>
+       </section>
+   </section>
+</body>
+</html>
